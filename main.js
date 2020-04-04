@@ -12,9 +12,9 @@ fs.readdir("./commands/", (err, files) => {
     if (err) return console.error;
     files.forEach(file => {
         if (!file.endsWith(".js")) return undefined;
-        const props = require("./commands/${file}");
+        const props = require(`./commands/${file}`);
         const cmdName = file.split(".")[0]; // exemple: animals.js  array => ["animals", "js"]
-        console.log('Commande ${cmdName} chargée.');
+        console.log(`Commande ${cmdName} chargée.`);
         client.commands.set(cmdName, props);
     });
 });
