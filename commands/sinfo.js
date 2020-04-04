@@ -1,6 +1,6 @@
 const { RichEmbed } = require("discord.js");
 
-module.exports = (client, message) => {
+exports.run = (client, message) => {
     const embed = new RichEmbed()
         .setDescription(message.guild.name)
         .setThumbnail(message.guild.iconURL)
@@ -9,4 +9,7 @@ module.exports = (client, message) => {
         .setFooter(message.guild.owner.user.tag, message.guild.owner.user.avatarURL)
         .setTimestamp();
     message.channel.send(embed);
+}
+exports.help = {
+    name: "sinfo"
 }

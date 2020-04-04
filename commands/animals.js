@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const { RichEmbed } = require("discord.js");
 
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
     message.delete({ timeout: 1500 });
 
     if (args[0] === "cat") {
@@ -32,4 +32,7 @@ module.exports = async (client, message, args) => {
             .setFooter("Powered by 'https://randomfox.ca/floof/'")
         message.channel.send(embed);
     }
+}
+exports.help = {
+    name: "animals"
 }

@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const { RichEmbed } = require("discord.js");
 
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
     message.delete({ timeout: 1500 });
     if (args[0] === "lorem") {
         const lorem = await fetch("https://picsum.photos/v2/list?limit=100")
@@ -19,4 +19,7 @@ module.exports = async (client, message, args) => {
             .setFooter("Powered by 'https://picsum.photos/v2/list/'")
         message.channel.send(embed);
     }
+}
+exports.help = {
+    name: "random"
 }
