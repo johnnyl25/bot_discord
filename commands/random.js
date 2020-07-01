@@ -7,6 +7,7 @@ exports.run = async (client, message, args) => {
         const lorem = await fetch("https://source.unsplash.com/1600x900/?")
             // .then(res => res.json())
             .then(json => json.download_url);
+            console.log(json.download_url);
             // .then(function (json) {
             //     const index = Math.floor(Math.random() * 100);
             //     let url = new URL(json[index].download_url);
