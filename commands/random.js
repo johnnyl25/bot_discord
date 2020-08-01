@@ -4,7 +4,7 @@ const { RichEmbed } = require("discord.js");
 exports.run = async (client, message, args) => {
     message.delete({ timeout: 1500 });
     if (args[0] === "lorem") {
-        const lorem = await fetch("https://source.unsplash.com/1600x900/?")
+        const lorem = await fetch("https://source.unsplash.com/1600x900/?nature")
             .then((response) => {
             // .then(json => json.download_url);
             // .then(function (json) {
