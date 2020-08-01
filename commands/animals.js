@@ -6,11 +6,11 @@ exports.run = async (client, message, args) => {
 
     if (args[0] === "cat") {
         const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=chat")
-            .then(res => res.json())
-            .then(json => json.JSON);
+            .then(res => res.hits)
+            
 
                 // let url = new URL(response.hits.imageURL);
-                console.log(json.JSON);
+                console.log(res.hits);
                 // return url;
 
             // .then(json => json);
