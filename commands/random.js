@@ -4,12 +4,12 @@ const { RichEmbed } = require("discord.js");
 exports.run = async (client, message, args) => {
     message.delete({ timeout: 1500 });
     if (args[0] === "lorem") {
-        const lorem = await fetch("https://source.unsplash.com/1600x900/")
-            .then(res => res.json())
+        const lorem = await fetch("https://source.unsplash.com/1600x900/?")
+            .then((response) => {
             // .then(json => json.download_url);
-            .then(function (json) {
+            // .then(function (json) {
                 const index = Math.floor(Math.random() * 100);
-                let url = new URL(json.download_url + index);
+                let url = new URL(response.url);
                 console.log(url);
                 return url;
             });
