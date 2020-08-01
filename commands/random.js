@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
                 let url = new URL(response.url);
                 console.log(url);
                 return url;
-            );
+            });
         const embed = new RichEmbed()
             .setTitle("Image random")
             .setImage(lorem)
@@ -27,7 +27,7 @@ exports.run = async (client, message, args) => {
             .setTitle("Image random de la nature")
             .setImage(cat)
             .setFooter("Powered by 'https://pixabay.com/'")
-        message.channel.send(embed);
+        message.channel.send(embed);}
 }
 exports.help = {
     name: "random"
