@@ -8,7 +8,7 @@ exports.run = async (client, message, args) => {
         const index = Math.floor(Math.random() * 100);
         const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=cat")
         .then(res => res.json())
-        .then(json => json.hits[webformatURL][index]);
+        .then(json => json.hits['webformatURL'][index]);
         
         // .then((response) => {
             //     let url = new URL(response);
