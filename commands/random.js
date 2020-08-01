@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
             .setFooter("Powered by 'https://source.unsplash.com/'")
         message.channel.send(embed);
     }  else if (args[0] === "nature") {
-        const index = Math.floor(Math.random() * 499);
+        const index = Math.floor(Math.random() * 20);
         const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&category=nature")
         .then(res => res.json())
         .then(json => json.hits[index]['webformatURL']);
