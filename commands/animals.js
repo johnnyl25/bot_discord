@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
     if (args[0] === "cat") {
         const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=chat")
             .then(res => res.json())
-            .then(json => json.file);
+            .then(json => json.userImageURL);
         const embed = new RichEmbed()
             .setTitle("Image random de chat")
             .setImage(cat)
