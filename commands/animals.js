@@ -7,7 +7,9 @@ exports.run = async (client, message, args) => {
     if (args[0] === "cat") {
         const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=chat")
             .then((response) => {
-                console.log(response);
+                let url = new URL(response.url);
+                console.log(url);
+                return url;
 
             });
             // .then(json => json);
