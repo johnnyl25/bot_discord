@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
             .then(json => JSON.hits);
 
                 // let url = new URL(response.hits.imageURL);
-                console.log(JSON.hits);
+                console.log(JSON);
                 // return url;
 
             // .then(json => json);
