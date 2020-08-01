@@ -5,9 +5,10 @@ exports.run = async (client, message, args) => {
     message.delete({ timeout: 1500 });
 
     if (args[0] === "cat") {
+        const index = Math.floor(Math.random() * 100);
         const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=cat")
         .then(res => res.json())
-        .then(json => json.hits.webformatURL);
+        .then(json => json.hits[webformatURL][index]);
         
         // .then((response) => {
             //     let url = new URL(response);
