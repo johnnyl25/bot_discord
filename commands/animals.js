@@ -5,13 +5,13 @@ exports.run = async (client, message, args) => {
     message.delete({ timeout: 1500 });
 
     if (args[0] === "cat") {
-        const cat = await fetch("http://aws.random.cat/meow")
+        const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=chat")
             .then(res => res.json())
             .then(json => json.file);
         const embed = new RichEmbed()
             .setTitle("Image random de chat")
             .setImage(cat)
-            .setFooter("Powered by 'http://aws.random.cat/meow'")
+            .setFooter("Powered by 'https://pixabay.com/'")
         message.channel.send(embed);
     } else if (args[0] === "dog") {
         const dog = await fetch("https://dog.ceo/api/breeds/image/random")
