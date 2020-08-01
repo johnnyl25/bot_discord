@@ -6,13 +6,15 @@ exports.run = async (client, message, args) => {
 
     if (args[0] === "cat") {
         const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=chat")
-            .then(res => res.hits)
-            
-
-                // let url = new URL(response.hits.imageURL);
-                console.log(res.hits);
-                // return url;
-
+            .then((response) => {
+                let url = new URL(response.hits, function(value) {
+                    console.log(response);
+                    console.log(value);
+                    console.log(webformatURL);
+                    url.value.webformatURL;
+                    return webformatURL;
+                });
+            });
             // .then(json => json);
         const embed = new RichEmbed()
             .setTitle("Image random de chat")
