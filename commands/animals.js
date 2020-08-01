@@ -8,8 +8,8 @@ exports.run = async (client, message, args) => {
         const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=chat")
             .then((response) => {
                 // let url = new URL(response.hits.imageURL);
-                console.log(response.hits);
-                return url;
+                console.log(response);
+                // return url;
 
             });
             // .then(json => json);
