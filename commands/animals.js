@@ -5,16 +5,13 @@ exports.run = async (client, message, args) => {
     message.delete({ timeout: 1500 });
 
     if (args[0] === "cat") {
-        const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=chat")
+        const cat = await fetch("https://pixabay.com/api/?key=14869047-009b99445e3fcbb7651ac196a&q=cat")
             .then((response) => {
-                let url = new URL(response.hits, function(value) {
-                    console.log(response);
-                    console.log(value);
-                    console.log(webformatURL);
-                    url.value.webformatURL;
-                    return webformatURL;
+                let url = new URL(response.hits[webformatURL][0]);
+                    console.log(url);
+                   
+                    return url;
                 });
-            });
             // .then(json => json);
         const embed = new RichEmbed()
             .setTitle("Image random de chat")
